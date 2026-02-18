@@ -1,0 +1,35 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page>section:nth-child(even) {
+    background-color: var(--light);
+}
+
+.home-page>section:nth-child(odd) {
+    background-color: var(--white);
+}
+
+/* Specific overrides to ensure proper alternation */
+.hero {
+    background-color: var(--light);
+}
+
+.gallery-section {
+    background-color: var(--white);
+}
+
+.services {
+    background-color: var(--light);
+}
+
+.testimonials {
+    background-color: var(--white);
+    padding-bottom: 5rem;
+}
+
+.get-started {
+    background-color: var(--light);
+    padding-top: 5rem;
+}

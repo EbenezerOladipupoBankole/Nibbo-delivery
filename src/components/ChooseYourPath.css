@@ -1,0 +1,121 @@
+.choose-path {
+    padding: 10rem 0;
+    background-color: var(--white);
+}
+
+.paths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.path-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: var(--transition-smooth);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.path-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.path-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    background-color: var(--light);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    transition: var(--transition-smooth);
+}
+
+.path-card:hover .path-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background-color: white;
+    box-shadow: var(--shadow);
+}
+
+.path-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.path-desc {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    min-height: 4.5rem;
+}
+
+.path-perks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.perk-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--logo-green);
+    background-color: rgba(27, 59, 43, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+}
+
+.path-cta {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+}
+
+.path-cta svg {
+    transition: var(--transition);
+}
+
+.path-cta:hover {
+    background-color: rgba(255, 102, 0, 0.05);
+}
+
+.path-cta:hover svg {
+    transform: translateX(5px);
+}
+
+.path-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 102, 0, 0.3);
+}
+
+@media (max-width: 991px) {
+    .paths-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .choose-path {
+        padding: 6rem 0;
+    }
+}
