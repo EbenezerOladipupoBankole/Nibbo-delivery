@@ -24,6 +24,10 @@ try {
     execSync('git remote add origin https://github.com/EbenezerOladipupoBankole/Nibbo-delivery.git');
 
     // 4. Add all files (including CNAME)
+    // Fix for React Router: Copy index.html to 404.html
+    console.log('📄 Creating 404.html for routing...');
+    fs.copyFileSync(path.join(distPath, 'index.html'), path.join(distPath, '404.html'));
+
     execSync('git add -A');
 
     // 5. Commit
