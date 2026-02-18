@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 import './Header.css'
 
 function Header() {
@@ -7,6 +8,8 @@ function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const location = useLocation()
     const navigate = useNavigate()
+    const { cartItems, setIsCartOpen } = useCart()
+    const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -59,6 +62,7 @@ function Header() {
                                 Services
                             </a>
                         </li>
+                        <li><Link to="/marketplace" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Market</Link></li>
                         <li>
                             <a
                                 href="/get-involved"
@@ -85,15 +89,23 @@ function Header() {
                         </li>
                     </ul>
                 </nav>
-                <button
-                    className="mobile-menu-btn"
-                    aria-label="Toggle menu"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+
+                <div className="header-actions">
+                    <button className="cart-toggle-btn" onClick={() => setIsCartOpen(true)}>
+                        <span className="cart-icon">🧺</span>
+                        {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                    </button>
+
+                    <button
+                        className="mobile-menu-btn"
+                        aria-label="Toggle menu"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </header>
     )

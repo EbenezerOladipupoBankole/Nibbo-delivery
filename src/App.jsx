@@ -4,23 +4,30 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import GetInvolved from './pages/GetInvolved'
 import Contact from './pages/Contact'
+import Marketplace from './pages/Marketplace'
+import CartDrawer from './components/CartDrawer'
+import { CartProvider } from './context/CartContext'
 import './App.css'
 
 function App() {
     return (
-        <Router>
-            <div className="app-wrapper">
-                <Header />
-                <main>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/get-involved" element={<GetInvolved />} />
-                        <Route path="/contact" element={<Contact />} />
-                    </Routes>
-                </main>
-                <Footer />
-            </div>
-        </Router>
+        <CartProvider>
+            <Router>
+                <div className="app-wrapper">
+                    <Header />
+                    <CartDrawer />
+                    <main>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/get-involved" element={<GetInvolved />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/marketplace" element={<Marketplace />} />
+                        </Routes>
+                    </main>
+                    <Footer />
+                </div>
+            </Router>
+        </CartProvider>
     )
 }
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './Services.css'
 
 const Services = () => {
@@ -36,7 +37,10 @@ const Services = () => {
       details: ['Market (Lafenwa/Kuto) Runs', 'Restaurant Deliveries', 'Specific Grocery Lists'],
       icon: '🍎',
       color: 'var(--primary)',
-      tag: 'Daily Needs'
+      tag: 'Daily Needs',
+      link: '/marketplace',
+      linkText: 'Browse the Market',
+      isInternal: true
     },
     {
       title: 'Express Errands',
@@ -44,7 +48,10 @@ const Services = () => {
       details: ['Document Dispatch', 'Bill Payments', 'Gift Deliveries'],
       icon: '⚡',
       color: '#25D366',
-      tag: 'On-Demand'
+      tag: 'On-Demand',
+      link: 'https://wa.me/YOUR_NUMBER',
+      linkText: 'Book on WhatsApp',
+      isInternal: false
     },
     {
       title: 'Corporate Logistics',
@@ -52,7 +59,10 @@ const Services = () => {
       details: ['Inventory Movement', 'Bulk Order Fulfillment', 'Weekly Logistics Plans'],
       icon: '💼',
       color: 'var(--logo-green)',
-      tag: 'For Business'
+      tag: 'For Business',
+      link: 'https://wa.me/YOUR_NUMBER',
+      linkText: 'Book on WhatsApp',
+      isInternal: false
     }
   ]
 
@@ -83,9 +93,15 @@ const Services = () => {
                 ))}
               </ul>
 
-              <a href="https://wa.me/YOUR_NUMBER" className="service-link" style={{ color: service.color }}>
-                Book this on WhatsApp <span>→</span>
-              </a>
+              {service.isInternal ? (
+                <Link to={service.link} className="service-link" style={{ color: service.color }}>
+                  {service.linkText} <span>→</span>
+                </Link>
+              ) : (
+                <a href={service.link} className="service-link" style={{ color: service.color }}>
+                  {service.linkText} <span>→</span>
+                </a>
+              )}
             </div>
           ))}
         </div>
