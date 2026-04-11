@@ -34,6 +34,11 @@
     gap: 0.4rem;
     text-transform: uppercase;
     position: relative;
+    transition: var(--transition);
+}
+
+.header.on-home:not(.scrolled) .logo {
+    color: var(--white);
 }
 
 .logo::after {
@@ -66,6 +71,14 @@
     transition: var(--transition);
     position: relative;
     padding: 0.5rem 0;
+}
+
+.header.on-home:not(.scrolled) .nav-link:not(.btn-primary) {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.header.on-home:not(.scrolled) .nav-link:not(.btn-primary):hover {
+    color: var(--white);
 }
 
 .nav-link::after {
@@ -147,6 +160,12 @@
     cursor: pointer;
     position: relative;
     transition: var(--transition);
+}
+
+.header.on-home:not(.scrolled) .cart-toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .cart-toggle-btn:hover {

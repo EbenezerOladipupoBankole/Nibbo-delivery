@@ -79,9 +79,9 @@ const Marketplace = () => {
             <header className="marketplace-header">
                 <div className="container">
                     <div className="header-content">
-                        <span className="badge">Níbbo Market</span>
+                        <span className="badge">Níbbo Market - Coming Soon</span>
                         <h1>Abeokuta Local Market Store</h1>
-                        <p>Browse fresh produce and essentials directly from Lafenwa, Kuto, and Panseke markets. We shop, you relax.</p>
+                        <p>We are currently onboarding your favorite vendors from Lafenwa, Kuto, and Panseke markets. Stay tuned!</p>
                     </div>
                 </div>
             </header>
@@ -131,9 +131,10 @@ const Marketplace = () => {
                     <div className="vendor-upsell glass-card">
                         <div className="upsell-text">
                             <h3>Are you a vendor in Abeokuta?</h3>
-                            <p>Post your products here and reach thousands of customers across the city.</p>
+                            <p>Register today to be among the first vendors on Níbbo Market.</p>
                         </div>
-                        <button className="join-vendor-btn">Register as Vendor</button>
+                        <a href="/become-a-vendor" className="btn btn-primary" style={{ textDecoration: 'none', display: 'inline-block' }}>Register as Vendor</a>
+
                     </div>
                 </div>
             </section>

@@ -1,0 +1,89 @@
+.home-features {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.group-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.group-intro {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 30px;
+}
+
+.feature-cards {
+    display: grid;
+    gap: 20px;
+}
+
+.f-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: var(--light);
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+}
+
+.f-card:hover {
+    transform: translateX(10px);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.f-icon {
+    font-size: 2rem;
+}
+
+.f-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.group-outro {
+    margin-top: 30px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.check-list {
+    display: grid;
+    gap: 25px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.check-icon {
+    font-size: 1.5rem;
+}
+
+.check-text h3 {
+    font-size: 1.4rem;
+    color: var(--dark);
+}
+
+@media (max-width: 900px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .group-title {
+        font-size: 2rem;
+    }
+}

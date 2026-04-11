@@ -42,7 +42,7 @@ function Header() {
     }
 
     return (
-        <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+        <header className={`header ${isScrolled ? 'scrolled' : ''} ${location.pathname === '/' ? 'on-home' : ''}`}>
             <div className="container header-container">
                 <Link to="/" className="logo">
                     NÍBBO
@@ -53,42 +53,14 @@ function Header() {
                 <nav className={`nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
                     <ul className="nav-list">
                         <li><Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-                        <li>
-                            <a
-                                href="/#services"
-                                className="nav-link"
-                                onClick={(e) => scrollToSection(e, '#services')}
-                            >
-                                Services
-                            </a>
-                        </li>
-                        <li><Link to="/marketplace" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Market</Link></li>
-                        <li>
-                            <a
-                                href="/get-involved"
-                                className="nav-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Get Involved
-                            </a>
-                        </li>
-                        <li>
-                            <Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
-                                Contact
-                            </Link>
-                        </li>
-                        <li>
-                            <a
-                                href="/#get-started"
-                                className="nav-link btn-primary"
-                                onClick={(e) => scrollToSection(e, '#get-started')}
-                            >
-                                Get Started
-                            </a>
-                        </li>
+                        <li><Link to="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
+                        <li><Link to="/how-it-works" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>How It Works</Link></li>
+                        <li><Link to="/become-a-rider" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Rider</Link></li>
+                        <li><Link to="/become-a-vendor" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Vendor</Link></li>
+                        <li><Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
                     </ul>
                 </nav>
+
 
                 <div className="header-actions">
                     <button className="cart-toggle-btn" onClick={() => setIsCartOpen(true)}>
