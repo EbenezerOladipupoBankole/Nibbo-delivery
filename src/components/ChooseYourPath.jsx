@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './ChooseYourPath.css'
 
 const paths = [
@@ -7,21 +8,24 @@ const paths = [
         title: 'Customer',
         icon: '🛍️',
         description: 'Send items, order food, or get errands done without leaving WhatsApp. Pay via transfer or link and track your rider in real-time.',
-        perks: ['No App Download', 'Instant Chat Updates', 'Secure Transfers']
+        perks: ['No App Download', 'Instant Chat Updates', 'Secure Transfers'],
+        link: '/marketplace'
     },
     {
         id: 'rider',
         title: 'Rider',
         icon: '🛵',
         description: 'Join the Níbbo fleet as a logistics professional. Get job alerts on WhatsApp, earn per delivery, and be your own boss.',
-        perks: ['Weekly Payouts', 'Flexible Hours', 'Verified Assignments']
+        perks: ['Weekly Payouts', 'Flexible Hours', 'Verified Assignments'],
+        link: '/become-a-rider'
     },
     {
         id: 'vendor',
         title: 'Vendor',
         icon: '🏪',
         description: 'Scale your business logistics. We integrate with your existing sales channel to provide reliable delivery for your customers.',
-        perks: ['Bulk Discounts', 'Sales Dashboard', 'Dedicated Support']
+        perks: ['Bulk Discounts', 'Sales Dashboard', 'Dedicated Support'],
+        link: '/become-a-vendor'
     }
 ]
 
@@ -80,10 +84,10 @@ function ChooseYourPath() {
                                     ))}
                                 </div>
 
-                                <button className="path-cta">
+                                <Link to={path.link} className="path-cta">
                                     Get Started As {path.title}
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

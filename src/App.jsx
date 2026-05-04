@@ -6,6 +6,7 @@ import ServicesPage from './pages/ServicesPage'
 import HowItWorks from './pages/HowItWorks'
 import BecomeARider from './pages/BecomeARider'
 import BecomeAVendor from './pages/BecomeAVendor'
+import JoinUs from './pages/JoinUs'
 import Contact from './pages/Contact'
 import Marketplace from './pages/Marketplace'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -25,6 +26,7 @@ function App() {
                             <Route path="/how-it-works" element={<HowItWorks />} />
                             <Route path="/become-a-rider" element={<BecomeARider />} />
                             <Route path="/become-a-vendor" element={<BecomeAVendor />} />
+                            <Route path="/join-us" element={<JoinUs />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/marketplace" element={<Marketplace />} />
                         </Routes>

@@ -53,11 +53,18 @@ function Header() {
                 <nav className={`nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
                     <ul className="nav-list">
                         <li><Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-                        <li><Link to="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
-                        <li><Link to="/how-it-works" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>How It Works</Link></li>
-                        <li><Link to="/become-a-rider" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Rider</Link></li>
-                        <li><Link to="/become-a-vendor" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Vendor</Link></li>
-                        <li><Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
+                        <li><Link to="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Service</Link></li>
+                        <li className="nav-item-dropdown">
+                            <div className="nav-link-with-icon">
+                                <Link to="/join-us" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Join Us</Link>
+                                <svg className="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                            <ul className="dropdown-menu">
+                                <li><Link to="/become-a-rider" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Become a Rider</Link></li>
+                                <li><Link to="/become-a-vendor" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Become a Vendor</Link></li>
+                            </ul>
+                        </li>
+                        <li><Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link></li>
                     </ul>
                 </nav>
 
